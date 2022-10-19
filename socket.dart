@@ -1,5 +1,7 @@
 import 'dart:convert';
+import 'package:Cryptonoma/widgets/darkcolor.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 class Socketdata extends StatefulWidget {
@@ -55,10 +57,37 @@ class _SocketdataState extends State<Socketdata> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 200,
+      width: 200,
+      color: Colors.black,
       child: Column(
         children: [
-          Text(livebalance.toString(),style: TextStyle(color: Colors.white),),
-          Text(livexchange.toString(),style: TextStyle(color: Colors.white),),
+          SizedBox(height: 200.0,),
+          Container(
+            child: Text("Balance",
+      style:GoogleFonts.comfortaa(
+        fontSize: 14,
+        color: DarkColor.white,
+      ),),
+          ),
+          SizedBox(height: 20.0,),
+          Text(livebalance.toString(),
+            style:GoogleFonts.comfortaa(
+            fontSize: 12,
+            color: DarkColor.white,
+          ),
+          ),
+          SizedBox(height: 50.0,),
+          Text("Exchange",
+            style:GoogleFonts.comfortaa(
+              fontSize: 14,
+              color: DarkColor.white,
+            ),),
+          SizedBox(height: 20.0,),
+          Text(livexchange.toString(), style:GoogleFonts.comfortaa(
+            fontSize: 12,
+            color: DarkColor.white,
+          ),),
         ],
       ),
     );
